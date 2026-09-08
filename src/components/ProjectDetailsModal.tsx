@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { ProjectItem, ProjectLabels } from '../lib/translations'
 import ProjectCover from './ProjectCover'
 import { CloseIcon, CheckIcon, MapPinIcon, ExternalLinkIcon } from './icons'
@@ -11,6 +11,7 @@ interface ProjectDetailsModalProps {
 
 export default function ProjectDetailsModal({ project, labels, onClose }: ProjectDetailsModalProps) {
   const panelRef = useRef<HTMLDivElement>(null)
+  const [active, setActive] = useState(0)
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -27,6 +28,7 @@ export default function ProjectDetailsModal({ project, labels, onClose }: Projec
   }, [onClose])
 
   const details = project.details
+  const gallery = project.images ?? (project.image ? [project.image] : [])
 
   const meta = details
     ? [
@@ -64,12 +66,42 @@ export default function ProjectDetailsModal({ project, labels, onClose }: Projec
         </button>
 
         <div className="p-5 sm:p-7">
-          <ProjectCover image={project.image} title={project.title} />
+          {gallery.length > 0 ? (
+            <div>
+              <div className="aspect-[16/10] overflow-hidden rounded-xl border border-border bg-bg-soft">
+                <img
+                  src={gallery[active]}
+                  alt={`${project.title} — ${active + 1}`}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+
+              {gallery.length > 1 && (
+                <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+                  {gallery.map((src, idx) => (
+                    <button
+                      key={src}
+                      type="button"
+                      onClick={() => setActive(idx)}
+                      aria-label={`${project.title} — ${idx + 1}`}
+                      className={`shrink-0 overflow-hidden rounded-lg border transition-colors cursor-pointer ${
+                        idx === active ? 'border-accent' : 'border-border hover:border-accent/50'
+                      }`}
+                    >
+                      <img src={src} alt="" className="h-14 w-20 object-cover object-top" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
+            <ProjectCover title={project.title} />
+          )}
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <h2 className="font-display text-2xl font-semibold tracking-tight text-text">{project.title}</h2>
             <span className="inline-flex items-center gap-1.5 rounded-lg bg-accent-soft px-2.5 py-1 font-mono text-[11px] text-accent">
-              {project.url && (
+              {project.live && (
                 <span className="relative flex size-1.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex size-1.5 rounded-full bg-emerald-500" />
@@ -126,11 +158,11 @@ export default function ProjectDetailsModal({ project, labels, onClose }: Projec
             <a
               href={project.url}
               target="_blank"
-              rel="noreferrer"
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-bg transition-all hover:opacity-90 hover:shadow-lg hover:shadow-accent/25 active:scale-95"
+              rel="noopener noreferrer"
+              className="group mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-bg transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:shadow-accent/25 active:scale-95"
             >
               {labels.visit}
-              <ExternalLinkIcon className="size-4" />
+              <ExternalLinkIcon className="size-4 transition-transform group-hover:translate-x-0.5" />
             </a>
           )}
         </div>

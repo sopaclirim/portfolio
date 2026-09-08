@@ -54,8 +54,10 @@ export interface Dictionary {
       description: string
       tags: string[]
       status: string
+      live?: boolean
       url?: string
       image?: string
+      images?: string[]
       details?: {
         overview: string
         company: string
@@ -175,8 +177,13 @@ export const translations: Record<Lang, Dictionary> = {
             'A stock and inventory management platform built for a client — product tracking, stock levels, and order management, with a full backend and an admin dashboard. Live and in real use.',
           tags: ['ASP.NET Core', 'Angular', 'PostgreSQL', 'Tailwind CSS', 'REST API'],
           status: 'Live',
-          url: 'https://online-am.com',
-          image: '/projects/am-stock.svg',
+          live: true,
+          images: [
+            '/projects/am-dashboard.png',
+            '/projects/am-produktet.png',
+            '/projects/am-financa.png',
+            '/projects/am-njoftime.png',
+          ],
           details: {
             overview:
               'AM — Stock Management is a full inventory and stock control platform I built for a client. It brings products, stock levels, suppliers and orders together in one place, with a secure admin dashboard for daily operations. I handled the whole product end to end — backend, database, interface and deployment.',
@@ -194,10 +201,29 @@ export const translations: Record<Lang, Dictionary> = {
           },
         },
         {
-          title: 'Project #2',
-          description: 'Project description will be added soon — a mobile app for end users.',
-          tags: ['React Native', 'Expo', 'REST API'],
-          status: 'Coming soon',
+          title: 'BlejeVet — E-Commerce Platform',
+          description:
+            'A full e-commerce platform for electronics — product catalog, search and filters, cart and checkout, and customer accounts. Built end to end and live for customers across Kosovo.',
+          tags: ['Angular', 'ASP.NET Core', 'PostgreSQL', 'Tailwind CSS', 'E-commerce'],
+          status: 'Live',
+          live: true,
+          url: 'https://www.bleje-vet.com',
+          details: {
+            overview:
+              'BlejeVet is an online store for electronics and tech — devices for work, home and everyday use. I built the whole platform end to end: a product catalog with search, filtering and sorting, a shopping cart and checkout, customer accounts, and an admin side to manage products and orders. It runs on an ASP.NET Core backend with an Angular frontend and PostgreSQL, and is live for customers across Kosovo.',
+            company: 'BlejeVet',
+            location: 'Kosovo',
+            year: '2026',
+            role: 'Full-Stack Developer',
+            features: [
+              'Product catalog with categories and brands',
+              'Search, filtering and sorting by price',
+              'Shopping cart and checkout',
+              'Customer accounts and order history',
+              'Admin panel to manage products and orders',
+              'Responsive design with fast delivery across Kosovo',
+            ],
+          },
         },
         {
           title: 'Project #3',
@@ -315,8 +341,13 @@ export const translations: Record<Lang, Dictionary> = {
             'Eine Lager- und Bestandsverwaltung für einen Kunden — Produktverwaltung, Lagerbestände und Auftragsabwicklung, mit vollständigem Backend und Admin-Dashboard. Live und im echten Einsatz.',
           tags: ['ASP.NET Core', 'Angular', 'PostgreSQL', 'Tailwind CSS', 'REST API'],
           status: 'Live',
-          url: 'https://online-am.com',
-          image: '/projects/am-stock.svg',
+          live: true,
+          images: [
+            '/projects/am-dashboard.png',
+            '/projects/am-produktet.png',
+            '/projects/am-financa.png',
+            '/projects/am-njoftime.png',
+          ],
           details: {
             overview:
               'AM — Stock Management ist eine vollständige Lager- und Bestandsplattform, die ich für einen Kunden entwickelt habe. Sie bündelt Produkte, Lagerbestände, Lieferanten und Aufträge an einem Ort, mit einem sicheren Admin-Dashboard für den täglichen Betrieb. Das gesamte Produkt habe ich von A bis Z umgesetzt — Backend, Datenbank, Oberfläche und Deployment.',
@@ -334,10 +365,29 @@ export const translations: Record<Lang, Dictionary> = {
           },
         },
         {
-          title: 'Projekt #2',
-          description: 'Beschreibung folgt in Kürze — eine Mobile-App für Endnutzer.',
-          tags: ['React Native', 'Expo', 'REST API'],
-          status: 'Bald',
+          title: 'BlejeVet — E-Commerce-Plattform',
+          description:
+            'Eine vollständige E-Commerce-Plattform für Elektronik — Produktkatalog, Suche und Filter, Warenkorb und Checkout sowie Kundenkonten. Von Grund auf entwickelt und live für Kunden in ganz Kosovo.',
+          tags: ['Angular', 'ASP.NET Core', 'PostgreSQL', 'Tailwind CSS', 'E-Commerce'],
+          status: 'Live',
+          live: true,
+          url: 'https://www.bleje-vet.com',
+          details: {
+            overview:
+              'BlejeVet ist ein Online-Shop für Elektronik und Technik — Geräte für Arbeit, Zuhause und den Alltag. Ich habe die gesamte Plattform von A bis Z entwickelt: einen Produktkatalog mit Suche, Filtern und Sortierung, einen Warenkorb mit Checkout, Kundenkonten sowie einen Admin-Bereich zur Verwaltung von Produkten und Bestellungen. Sie läuft auf einem ASP.NET-Core-Backend mit Angular-Frontend und PostgreSQL und ist live für Kunden in ganz Kosovo.',
+            company: 'BlejeVet',
+            location: 'Kosovo',
+            year: '2026',
+            role: 'Full-Stack-Entwickler',
+            features: [
+              'Produktkatalog mit Kategorien und Marken',
+              'Suche, Filter und Sortierung nach Preis',
+              'Warenkorb und Checkout',
+              'Kundenkonten und Bestellhistorie',
+              'Admin-Bereich zur Verwaltung von Produkten und Bestellungen',
+              'Responsives Design mit schneller Lieferung in ganz Kosovo',
+            ],
+          },
         },
         {
           title: 'Projekt #3',

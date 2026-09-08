@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { CodeIcon } from './icons'
 
 interface ProjectCoverProps {
@@ -8,19 +9,24 @@ interface ProjectCoverProps {
 
 /**
  * Renders a project's cover image when available, otherwise a branded
- * gradient placeholder so cards without a screenshot still look intentional.
+ * gradient placeholder. Also falls back to the placeholder if the image
+ * fails to load (e.g. a screenshot that hasn't been added yet).
  */
 export default function ProjectCover({ image, title, className = '' }: ProjectCoverProps) {
+  const [failed, setFailed] = useState(false)
+  const showImage = image && !failed
+
   return (
     <div
       className={`relative aspect-[16/10] overflow-hidden rounded-xl border border-border bg-bg-soft ${className}`}
     >
-      {image ? (
+      {showImage ? (
         <img
           src={image}
           alt={`${title} — preview`}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+          onError={() => setFailed(true)}
+          className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
         />
       ) : (
         <div className="grid h-full w-full place-items-center bg-gradient-to-br from-accent/15 via-bg-soft to-accent2/15">

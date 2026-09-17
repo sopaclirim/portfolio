@@ -179,10 +179,12 @@ export const translations: Record<Lang, Dictionary> = {
           status: 'Live',
           live: true,
           images: [
+            '/projects/am-financa.png',
             '/projects/am-dashboard.png',
             '/projects/am-produktet.png',
-            '/projects/am-financa.png',
+            '/projects/am-produkt-i-ri.png',
             '/projects/am-njoftime.png',
+            '/projects/am-login.png',
           ],
           details: {
             overview:
@@ -208,6 +210,7 @@ export const translations: Record<Lang, Dictionary> = {
           status: 'Live',
           live: true,
           url: 'https://www.bleje-vet.com',
+          images: ['/projects/blejevet-home.png'],
           details: {
             overview:
               'BlejeVet is an online store for electronics and tech — devices for work, home and everyday use. I built the whole platform end to end: a product catalog with search, filtering and sorting, a shopping cart and checkout, customer accounts, and an admin side to manage products and orders. It runs on an ASP.NET Core backend with an Angular frontend and PostgreSQL, and is live for customers across Kosovo.',
@@ -226,10 +229,29 @@ export const translations: Record<Lang, Dictionary> = {
           },
         },
         {
-          title: 'Project #3',
-          description: 'Project description will be added soon — a tool or personal website.',
-          tags: ['React', 'TypeScript', 'Tailwind'],
-          status: 'Coming soon',
+          title: 'Tregu i Kafshëve — Animal Marketplace',
+          description:
+            'A classifieds marketplace for buying and selling animals — pets and farm livestock — with staff-verified listings, category and location filters, and direct buyer–seller contact. Live across Kosovo, Albania and North Macedonia.',
+          tags: ['Angular', 'ASP.NET Core', 'PostgreSQL', 'Tailwind CSS', 'Marketplace'],
+          status: 'Live',
+          live: true,
+          url: 'https://www.treguikafsheve.com',
+          details: {
+            overview:
+              'Tregu i Kafshëve is an online marketplace for buying and selling animals — from pets to farm livestock. Users register for free (email or Google), post listings with photos, description and contact details, and every listing is verified by staff before it goes live. Buyers browse by category, filter by location and price, and reach sellers directly. I built the platform end to end — an ASP.NET Core backend, an Angular frontend and PostgreSQL — and it is live across Kosovo, Albania and North Macedonia.',
+            company: 'Tregu i Kafshëve',
+            location: 'Kosovo · Albania · North Macedonia',
+            year: '2026',
+            role: 'Full-Stack Developer',
+            features: [
+              'Free listings with photos, description and contact',
+              'Staff-verified listings',
+              'Category browsing for pets and farm animals',
+              'Filtering by location, category and price',
+              'Account sign-up with email or Google',
+              'Direct buyer–seller contact',
+            ],
+          },
         },
       ],
       viewCode: 'Code',
@@ -343,10 +365,12 @@ export const translations: Record<Lang, Dictionary> = {
           status: 'Live',
           live: true,
           images: [
+            '/projects/am-financa.png',
             '/projects/am-dashboard.png',
             '/projects/am-produktet.png',
-            '/projects/am-financa.png',
+            '/projects/am-produkt-i-ri.png',
             '/projects/am-njoftime.png',
+            '/projects/am-login.png',
           ],
           details: {
             overview:
@@ -372,6 +396,7 @@ export const translations: Record<Lang, Dictionary> = {
           status: 'Live',
           live: true,
           url: 'https://www.bleje-vet.com',
+          images: ['/projects/blejevet-home.png'],
           details: {
             overview:
               'BlejeVet ist ein Online-Shop für Elektronik und Technik — Geräte für Arbeit, Zuhause und den Alltag. Ich habe die gesamte Plattform von A bis Z entwickelt: einen Produktkatalog mit Suche, Filtern und Sortierung, einen Warenkorb mit Checkout, Kundenkonten sowie einen Admin-Bereich zur Verwaltung von Produkten und Bestellungen. Sie läuft auf einem ASP.NET-Core-Backend mit Angular-Frontend und PostgreSQL und ist live für Kunden in ganz Kosovo.',
@@ -390,10 +415,29 @@ export const translations: Record<Lang, Dictionary> = {
           },
         },
         {
-          title: 'Projekt #3',
-          description: 'Beschreibung folgt in Kürze — ein Tool oder eine persönliche Website.',
-          tags: ['React', 'TypeScript', 'Tailwind'],
-          status: 'Bald',
+          title: 'Tregu i Kafshëve — Tiermarktplatz',
+          description:
+            'Ein Kleinanzeigen-Marktplatz zum Kaufen und Verkaufen von Tieren — Haustiere und Nutztiere — mit geprüften Anzeigen, Filtern nach Kategorie und Ort sowie direktem Kontakt zwischen Käufer und Verkäufer. Live in Kosovo, Albanien und Nordmazedonien.',
+          tags: ['Angular', 'ASP.NET Core', 'PostgreSQL', 'Tailwind CSS', 'Marktplatz'],
+          status: 'Live',
+          live: true,
+          url: 'https://www.treguikafsheve.com',
+          details: {
+            overview:
+              'Tregu i Kafshëve ist ein Online-Marktplatz zum Kaufen und Verkaufen von Tieren — von Haustieren bis zu Nutztieren. Nutzer registrieren sich kostenlos (per E-Mail oder Google), erstellen Anzeigen mit Fotos, Beschreibung und Kontaktdaten, und jede Anzeige wird vom Team geprüft, bevor sie online geht. Käufer durchsuchen nach Kategorie und filtern nach Ort und Preis und erreichen Verkäufer direkt. Ich habe die Plattform von A bis Z entwickelt — ASP.NET-Core-Backend, Angular-Frontend und PostgreSQL — und sie ist live in Kosovo, Albanien und Nordmazedonien.',
+            company: 'Tregu i Kafshëve',
+            location: 'Kosovo · Albanien · Nordmazedonien',
+            year: '2026',
+            role: 'Full-Stack-Entwickler',
+            features: [
+              'Kostenlose Anzeigen mit Fotos, Beschreibung und Kontakt',
+              'Vom Team geprüfte Anzeigen',
+              'Kategorie-Browsing für Haus- und Nutztiere',
+              'Filter nach Ort, Kategorie und Preis',
+              'Registrierung per E-Mail oder Google',
+              'Direkter Kontakt zwischen Käufer und Verkäufer',
+            ],
+          },
         },
       ],
       viewCode: 'Code',

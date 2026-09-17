@@ -12,6 +12,7 @@ interface ProjectDetailsModalProps {
 export default function ProjectDetailsModal({ project, labels, onClose }: ProjectDetailsModalProps) {
   const panelRef = useRef<HTMLDivElement>(null)
   const [active, setActive] = useState(0)
+  const [failed, setFailed] = useState<string[]>([])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -28,7 +29,11 @@ export default function ProjectDetailsModal({ project, labels, onClose }: Projec
   }, [onClose])
 
   const details = project.details
-  const gallery = project.images ?? (project.image ? [project.image] : [])
+  const allImages = project.images ?? (project.image ? [project.image] : [])
+  // Drop any image that fails to load (e.g. a screenshot not yet added) so the
+  // gallery never shows a broken-image icon. If none load, fall back to the cover.
+  const gallery = allImages.filter((src) => !failed.includes(src))
+  const activeIndex = active < gallery.length ? active : 0
 
   const meta = details
     ? [
@@ -70,8 +75,10 @@ export default function ProjectDetailsModal({ project, labels, onClose }: Projec
             <div>
               <div className="aspect-[16/10] overflow-hidden rounded-xl border border-border bg-bg-soft">
                 <img
-                  src={gallery[active]}
-                  alt={`${project.title} — ${active + 1}`}
+                  key={gallery[activeIndex]}
+                  src={gallery[activeIndex]}
+                  alt={`${project.title} — ${activeIndex + 1}`}
+                  onError={() => setFailed((f) => [...f, gallery[activeIndex]])}
                   className="h-full w-full object-contain"
                 />
               </div>
@@ -85,10 +92,15 @@ export default function ProjectDetailsModal({ project, labels, onClose }: Projec
                       onClick={() => setActive(idx)}
                       aria-label={`${project.title} — ${idx + 1}`}
                       className={`shrink-0 overflow-hidden rounded-lg border transition-colors cursor-pointer ${
-                        idx === active ? 'border-accent' : 'border-border hover:border-accent/50'
+                        idx === activeIndex ? 'border-accent' : 'border-border hover:border-accent/50'
                       }`}
                     >
-                      <img src={src} alt="" className="h-14 w-20 object-cover object-top" />
+                      <img
+                        src={src}
+                        alt=""
+                        onError={() => setFailed((f) => [...f, src])}
+                        className="h-14 w-20 object-cover object-top"
+                      />
                     </button>
                   ))}
                 </div>

@@ -236,6 +236,7 @@ export const translations: Record<Lang, Dictionary> = {
           status: 'Live',
           live: true,
           url: 'https://www.treguikafsheve.com',
+          images: ['/projects/tregu-home.png'],
           details: {
             overview:
               'Tregu i Kafshëve is an online marketplace for buying and selling animals — from pets to farm livestock. Users register for free (email or Google), post listings with photos, description and contact details, and every listing is verified by staff before it goes live. Buyers browse by category, filter by location and price, and reach sellers directly. I built the platform end to end — an ASP.NET Core backend, an Angular frontend and PostgreSQL — and it is live across Kosovo, Albania and North Macedonia.',
@@ -422,6 +423,7 @@ export const translations: Record<Lang, Dictionary> = {
           status: 'Live',
           live: true,
           url: 'https://www.treguikafsheve.com',
+          images: ['/projects/tregu-home.png'],
           details: {
             overview:
               'Tregu i Kafshëve ist ein Online-Marktplatz zum Kaufen und Verkaufen von Tieren — von Haustieren bis zu Nutztieren. Nutzer registrieren sich kostenlos (per E-Mail oder Google), erstellen Anzeigen mit Fotos, Beschreibung und Kontaktdaten, und jede Anzeige wird vom Team geprüft, bevor sie online geht. Käufer durchsuchen nach Kategorie und filtern nach Ort und Preis und erreichen Verkäufer direkt. Ich habe die Plattform von A bis Z entwickelt — ASP.NET-Core-Backend, Angular-Frontend und PostgreSQL — und sie ist live in Kosovo, Albanien und Nordmazedonien.',

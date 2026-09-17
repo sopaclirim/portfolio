@@ -35,7 +35,7 @@ export default function Projects() {
                     aria-label={`${project.title} — ${dict.projects.detailsCta}`}
                     className="block cursor-pointer text-left"
                   >
-                    <ProjectCover image={cover} title={project.title} />
+                    <ProjectCover image={cover} title={project.title} fit={project.imageFit} />
                   </button>
 
                   <div className="flex flex-1 flex-col px-2 pb-1 pt-4">

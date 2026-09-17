@@ -5,6 +5,7 @@ interface ProjectCoverProps {
   image?: string
   title: string
   className?: string
+  fit?: 'cover' | 'contain'
 }
 
 /**
@@ -12,9 +13,10 @@ interface ProjectCoverProps {
  * gradient placeholder. Also falls back to the placeholder if the image
  * fails to load (e.g. a screenshot that hasn't been added yet).
  */
-export default function ProjectCover({ image, title, className = '' }: ProjectCoverProps) {
+export default function ProjectCover({ image, title, className = '', fit = 'cover' }: ProjectCoverProps) {
   const [failed, setFailed] = useState(false)
   const showImage = image && !failed
+  const fitClass = fit === 'contain' ? 'object-contain' : 'object-cover object-top'
 
   return (
     <div
@@ -26,7 +28,7 @@ export default function ProjectCover({ image, title, className = '' }: ProjectCo
           alt={`${title} — preview`}
           loading="lazy"
           onError={() => setFailed(true)}
-          className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+          className={`h-full w-full ${fitClass} transition-transform duration-500 group-hover:scale-[1.04]`}
         />
       ) : (
         <div className="grid h-full w-full place-items-center bg-gradient-to-br from-accent/15 via-bg-soft to-accent2/15">

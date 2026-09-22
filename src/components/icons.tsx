@@ -1,4 +1,5 @@
-import type { SVGProps } from 'react'
+import type { ElementType, SVGProps } from 'react'
+import { FaWarehouse, FaCartShopping, FaPaw, FaMosque } from 'react-icons/fa6'
 
 const base = {
   viewBox: '0 0 24 24',
@@ -124,4 +125,12 @@ export function MapPinIcon(props: SVGProps<SVGSVGElement>) {
       <circle cx="12" cy="10" r="3" />
     </svg>
   )
+}
+
+/** Maps a project's icon key to the professional (react-icons) cover icon. */
+export const projectIcons: Record<string, ElementType> = {
+  stock: FaWarehouse,
+  cart: FaCartShopping,
+  paw: FaPaw,
+  mosque: FaMosque,
 }

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ProjectItem, ProjectLabels } from '../lib/translations'
 import ProjectCover from './ProjectCover'
-import { CloseIcon, CheckIcon, MapPinIcon, ExternalLinkIcon } from './icons'
+import { CloseIcon, CheckIcon, MapPinIcon, ExternalLinkIcon, projectIcons } from './icons'
 
 interface ProjectDetailsModalProps {
   project: ProjectItem
@@ -107,7 +107,10 @@ export default function ProjectDetailsModal({ project, labels, onClose }: Projec
               )}
             </div>
           ) : (
-            <ProjectCover title={project.title} />
+            <ProjectCover
+              title={project.title}
+              icon={project.icon ? projectIcons[project.icon] : undefined}
+            />
           )}
 
           <div className="mt-6 flex flex-wrap items-center gap-3">

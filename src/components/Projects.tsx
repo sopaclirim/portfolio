@@ -4,7 +4,7 @@ import SectionHeading from './SectionHeading'
 import Reveal from './Reveal'
 import ProjectCover from './ProjectCover'
 import ProjectDetailsModal from './ProjectDetailsModal'
-import { ArrowRightIcon } from './icons'
+import { ArrowRightIcon, projectIcons } from './icons'
 
 /** How many cards are visible at once, based on the viewport width. */
 function getPerView() {
@@ -58,8 +58,6 @@ export default function Projects() {
               style={{ transform: `translateX(-${index * slideWidth}%)` }}
             >
               {items.map((project, i) => {
-                const cover = project.images?.[0] ?? project.image
-
                 return (
                   <li key={project.title} className="shrink-0 px-3" style={{ flexBasis: `${slideWidth}%` }}>
                     <article className="group relative flex h-full flex-col rounded-2xl border border-border bg-surface p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-accent/5">
@@ -70,10 +68,8 @@ export default function Projects() {
                         className="block cursor-pointer text-left"
                       >
                         <ProjectCover
-                          image={cover}
                           title={project.title}
-                          fit={project.imageFit}
-                          position={project.imagePosition}
+                          icon={project.icon ? projectIcons[project.icon] : undefined}
                         />
                       </button>
 

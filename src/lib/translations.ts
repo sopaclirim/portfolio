@@ -60,6 +60,8 @@ export interface Dictionary {
       images?: string[]
       imageFit?: 'cover' | 'contain'
       imagePosition?: string
+      /** Icon key for the generated cover (see projectIcons). */
+      icon?: string
       details?: {
         overview: string
         company: string
@@ -182,6 +184,7 @@ export const translations: Record<Lang, Dictionary> = {
           tags: ['ASP.NET Core', 'Angular', 'PostgreSQL', 'Tailwind CSS', 'REST API'],
           status: 'Live',
           live: true,
+          icon: 'stock',
           images: [
             '/projects/am-financa.png',
             '/projects/am-dashboard.png',
@@ -214,7 +217,7 @@ export const translations: Record<Lang, Dictionary> = {
           status: 'Live',
           live: true,
           url: 'https://www.bleje-vet.com',
-          images: ['/projects/blejevet-home.png'],
+          icon: 'cart',
           details: {
             overview:
               'BlejeVet is an online store for electronics and tech — devices for work, home and everyday use. I built the whole platform end to end: a product catalog with search, filtering and sorting, a shopping cart and checkout, customer accounts, and an admin side to manage products and orders. It runs on an ASP.NET Core backend with an Angular frontend and PostgreSQL, and is live for customers across Kosovo.',
@@ -240,8 +243,7 @@ export const translations: Record<Lang, Dictionary> = {
           status: 'Live',
           live: true,
           url: 'https://www.treguikafsheve.com',
-          images: ['/projects/tregu-home.png'],
-          imageFit: 'contain',
+          icon: 'paw',
           details: {
             overview:
               'Tregu i Kafshëve is an online marketplace for buying and selling animals — from pets to farm livestock. Users register for free (email or Google), post listings with photos, description and contact details, and every listing is verified by staff before it goes live. Buyers browse by category, filter by location and price, and reach sellers directly. I built the platform end to end — an ASP.NET Core backend, an Angular frontend and PostgreSQL — and it is live across Kosovo, Albania and North Macedonia.',
@@ -267,8 +269,7 @@ export const translations: Record<Lang, Dictionary> = {
           status: 'Live',
           live: true,
           url: 'https://www.xhamiagracke.org',
-          images: ['/projects/xhamia-gracke.jpg'],
-          imagePosition: 'center',
+          icon: 'mosque',
           details: {
             overview:
               'Xhamia Grackë is the website of the mosque in Grackë e Vogël, in the municipality of Lipjan, Kosovo. It gives the local community daily prayer times with a live countdown (from the official BIK calendar), a Quran reader, a hadith of the day, lectures from the imam’s channel, posts from the imams and a photo gallery, plus an about section on the mosque. I built it end to end — an ASP.NET Core backend, an Angular frontend and PostgreSQL.',
@@ -399,6 +400,7 @@ export const translations: Record<Lang, Dictionary> = {
           tags: ['ASP.NET Core', 'Angular', 'PostgreSQL', 'Tailwind CSS', 'REST API'],
           status: 'Live',
           live: true,
+          icon: 'stock',
           images: [
             '/projects/am-financa.png',
             '/projects/am-dashboard.png',
@@ -431,7 +433,7 @@ export const translations: Record<Lang, Dictionary> = {
           status: 'Live',
           live: true,
           url: 'https://www.bleje-vet.com',
-          images: ['/projects/blejevet-home.png'],
+          icon: 'cart',
           details: {
             overview:
               'BlejeVet ist ein Online-Shop für Elektronik und Technik — Geräte für Arbeit, Zuhause und den Alltag. Ich habe die gesamte Plattform von A bis Z entwickelt: einen Produktkatalog mit Suche, Filtern und Sortierung, einen Warenkorb mit Checkout, Kundenkonten sowie einen Admin-Bereich zur Verwaltung von Produkten und Bestellungen. Sie läuft auf einem ASP.NET-Core-Backend mit Angular-Frontend und PostgreSQL und ist live für Kunden in ganz Kosovo.',
@@ -457,8 +459,7 @@ export const translations: Record<Lang, Dictionary> = {
           status: 'Live',
           live: true,
           url: 'https://www.treguikafsheve.com',
-          images: ['/projects/tregu-home.png'],
-          imageFit: 'contain',
+          icon: 'paw',
           details: {
             overview:
               'Tregu i Kafshëve ist ein Online-Marktplatz zum Kaufen und Verkaufen von Tieren — von Haustieren bis zu Nutztieren. Nutzer registrieren sich kostenlos (per E-Mail oder Google), erstellen Anzeigen mit Fotos, Beschreibung und Kontaktdaten, und jede Anzeige wird vom Team geprüft, bevor sie online geht. Käufer durchsuchen nach Kategorie und filtern nach Ort und Preis und erreichen Verkäufer direkt. Ich habe die Plattform von A bis Z entwickelt — ASP.NET-Core-Backend, Angular-Frontend und PostgreSQL — und sie ist live in Kosovo, Albanien und Nordmazedonien.',
@@ -484,8 +485,7 @@ export const translations: Record<Lang, Dictionary> = {
           status: 'Live',
           live: true,
           url: 'https://www.xhamiagracke.org',
-          images: ['/projects/xhamia-gracke.jpg'],
-          imagePosition: 'center',
+          icon: 'mosque',
           details: {
             overview:
               'Xhamia Grackë ist die Website der Moschee in Grackë e Vogël in der Gemeinde Lipjan, Kosovo. Sie bietet der lokalen Gemeinde tägliche Gebetszeiten mit Live-Countdown (aus dem offiziellen BIK-Kalender), einen Koran-Leser, ein tägliches Hadith, Vorträge vom Kanal des Imams, Beiträge der Imame und eine Fotogalerie sowie einen Bereich über die Moschee. Ich habe sie von A bis Z entwickelt — ASP.NET-Core-Backend, Angular-Frontend und PostgreSQL.',

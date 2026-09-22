@@ -59,6 +59,7 @@ export interface Dictionary {
       image?: string
       images?: string[]
       imageFit?: 'cover' | 'contain'
+      imagePosition?: string
       details?: {
         overview: string
         company: string
@@ -72,6 +73,8 @@ export interface Dictionary {
     liveDemo: string
     comingSoon: string
     detailsCta: string
+    prev: string
+    next: string
     labels: {
       company: string
       location: string
@@ -256,11 +259,40 @@ export const translations: Record<Lang, Dictionary> = {
             ],
           },
         },
+        {
+          title: 'Xhamia Grackë — Mosque Website',
+          description:
+            'A website for the Grackë e Vogël mosque in Lipjan — live prayer times, a Quran reader, daily hadith, lectures, imam posts and a gallery. Live for the local community.',
+          tags: ['Angular', 'ASP.NET Core', 'PostgreSQL', 'Tailwind CSS'],
+          status: 'Live',
+          live: true,
+          url: 'https://www.xhamiagracke.org',
+          images: ['/projects/xhamia-gracke.jpg'],
+          imagePosition: 'center',
+          details: {
+            overview:
+              'Xhamia Grackë is the website of the mosque in Grackë e Vogël, in the municipality of Lipjan, Kosovo. It gives the local community daily prayer times with a live countdown (from the official BIK calendar), a Quran reader, a hadith of the day, lectures from the imam’s channel, posts from the imams and a photo gallery, plus an about section on the mosque. I built it end to end — an ASP.NET Core backend, an Angular frontend and PostgreSQL.',
+            company: 'Xhamia Grackë',
+            location: 'Grackë e Vogël, Lipjan · Kosovo',
+            year: '2026',
+            role: 'Full-Stack Developer',
+            features: [
+              'Live prayer times with countdown (BIK calendar)',
+              'Quran reader',
+              'Daily hadith',
+              'Lectures from the imam’s channel',
+              'Posts from the imams',
+              'Photo gallery and about section',
+            ],
+          },
+        },
       ],
       viewCode: 'Code',
       liveDemo: 'Demo',
       comingSoon: 'Details coming soon',
       detailsCta: 'View details',
+      prev: 'Previous',
+      next: 'Next',
       labels: {
         company: 'Client',
         location: 'Location',
@@ -444,11 +476,40 @@ export const translations: Record<Lang, Dictionary> = {
             ],
           },
         },
+        {
+          title: 'Xhamia Grackë — Moschee-Website',
+          description:
+            'Eine Website für die Moschee in Grackë e Vogël (Lipjan) — Live-Gebetszeiten, Koran-Leser, tägliches Hadith, Vorträge, Imam-Beiträge und eine Galerie. Live für die lokale Gemeinde.',
+          tags: ['Angular', 'ASP.NET Core', 'PostgreSQL', 'Tailwind CSS'],
+          status: 'Live',
+          live: true,
+          url: 'https://www.xhamiagracke.org',
+          images: ['/projects/xhamia-gracke.jpg'],
+          imagePosition: 'center',
+          details: {
+            overview:
+              'Xhamia Grackë ist die Website der Moschee in Grackë e Vogël in der Gemeinde Lipjan, Kosovo. Sie bietet der lokalen Gemeinde tägliche Gebetszeiten mit Live-Countdown (aus dem offiziellen BIK-Kalender), einen Koran-Leser, ein tägliches Hadith, Vorträge vom Kanal des Imams, Beiträge der Imame und eine Fotogalerie sowie einen Bereich über die Moschee. Ich habe sie von A bis Z entwickelt — ASP.NET-Core-Backend, Angular-Frontend und PostgreSQL.',
+            company: 'Xhamia Grackë',
+            location: 'Grackë e Vogël, Lipjan · Kosovo',
+            year: '2026',
+            role: 'Full-Stack-Entwickler',
+            features: [
+              'Live-Gebetszeiten mit Countdown (BIK-Kalender)',
+              'Koran-Leser',
+              'Tägliches Hadith',
+              'Vorträge vom Kanal des Imams',
+              'Beiträge der Imame',
+              'Fotogalerie und Über-Bereich',
+            ],
+          },
+        },
       ],
       viewCode: 'Code',
       liveDemo: 'Demo',
       comingSoon: 'Details folgen in Kürze',
       detailsCta: 'Details ansehen',
+      prev: 'Zurück',
+      next: 'Weiter',
       labels: {
         company: 'Kunde',
         location: 'Standort',

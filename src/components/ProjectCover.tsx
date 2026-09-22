@@ -6,6 +6,8 @@ interface ProjectCoverProps {
   title: string
   className?: string
   fit?: 'cover' | 'contain'
+  /** object-position for the cover image (e.g. 'center'). Defaults to top. */
+  position?: string
 }
 
 /**
@@ -13,10 +15,11 @@ interface ProjectCoverProps {
  * gradient placeholder. Also falls back to the placeholder if the image
  * fails to load (e.g. a screenshot that hasn't been added yet).
  */
-export default function ProjectCover({ image, title, className = '', fit = 'cover' }: ProjectCoverProps) {
+export default function ProjectCover({ image, title, className = '', fit = 'cover', position }: ProjectCoverProps) {
   const [failed, setFailed] = useState(false)
   const showImage = image && !failed
-  const fitClass = fit === 'contain' ? 'object-contain' : 'object-cover object-top'
+  const fitClass =
+    fit === 'contain' ? 'object-contain' : position ? 'object-cover' : 'object-cover object-top'
 
   return (
     <div
@@ -28,6 +31,7 @@ export default function ProjectCover({ image, title, className = '', fit = 'cove
           alt={`${title} — preview`}
           loading="lazy"
           onError={() => setFailed(true)}
+          style={position ? { objectPosition: position } : undefined}
           className={`h-full w-full ${fitClass} transition-transform duration-500 group-hover:scale-[1.04]`}
         />
       ) : (

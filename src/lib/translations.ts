@@ -142,9 +142,9 @@ export const translations: Record<Lang, Dictionary> = {
       kicker: 'What I use',
       subtitle: 'The tools and technologies I work with every day to build sustainable products.',
       groups: [
-        { title: 'Backend', items: ['C# / .NET', 'ASP.NET Core', 'REST API', 'SQL Server', 'Entity Framework'] },
+        { title: 'Backend', items: ['C# / .NET', 'ASP.NET Core', 'REST API', 'SQL Server', 'PostgreSQL', 'Entity Framework'] },
         { title: 'Frontend', items: ['Angular', 'React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML / CSS'] },
-        { title: 'Mobile', items: ['React Native', 'Expo'] },
+        { title: 'Mobile', items: ['React Native', 'Expo', 'Flutter'] },
         { title: 'Tools & Practices', items: ['Git / GitHub', 'VS Code', 'Postman', 'Agile / Scrum', 'Basic CI/CD'] },
       ],
     },
